@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Hind:300,400&display=swap");
+
+.faq_container {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 80%;
+  padding-top: 50px !important;
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion .accordion-item button[aria-expanded=true] {
+  border-bottom: 1px solid #03b5d2;
+}
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover, .accordion button:focus {
+  cursor: pointer;
+  color: #03b5d2;
+}
+.accordion button:hover::after, .accordion button:focus::after {
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded=true] {
+  color: #03b5d2;
+}
+.accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
+
+
+/* Bannner Section Style Start */
+
+.ban_sec {
+  width: 100%;
+  padding-top: 90px;
+}
+.ban_img {
+  width: 100%;
+  position: relative;
+}
+.ban_img img {
+  width: 100%;
+}
+.ban_text {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.ban_text strong {
+  font: 800 30px "Montserrat", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+}
+.ban_text strong span {
+  font: 400 34.44px/52px "Montserrat", sans-serif;
+  letter-spacing: 3px;
+}
+.ban_text p {
+  font: 400 25px/30px "Montserrat", sans-serif;
+  color: #fff;
+  margin: 7px 0 25px;
+}
+.ban_text a {
+  display: inline-block;
+  font: 800 19.39px/24px "Montserrat", sans-serif;
+  background: #282828;
+  border-radius: 26px;
+  color: #fff;
+  padding: 12px 28px;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-decoration:none;
+}
+.ban_text a:hover {
+  background: #50af47;
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .ban_text p {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ban_text p {
+    font-size: 17px;
+  }
+  .ban_text strong {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  .ban_text strong span {
+    font-size: 37px;
+  }
+  .ban_text a {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .ban_text strong {
+    font-size: 35px;
+    line-height: 40px;
+  }
+  .ban_text strong span {
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: 2px;
+  }
+  .ban_text p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .ban_text a {
+    font-size: 13.39px;
+    line-height: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .ban_img img {
+    min-height: 290px;
+    object-fit: cover;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .ban_text strong {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    width: 100%;
+    display: block;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .ban_text strong span {
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: 1px;
+  }
+  .ban_text {
+    left: 2%;
+  }
+}
+
+
+/* Banner Section Style End */
+
+
+

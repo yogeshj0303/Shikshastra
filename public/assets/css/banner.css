@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+/*html,*/
+/*body {*/
+/*  height: 100vh;*/
+/*  display: grid;*/
+/*  place-items: center;*/
+/*  background-color: #F9FAFB;*/
+/*}*/
+
+.banner_section {
+    margin-top: 40px !important;
+    margin: 0 auto;
+    width: 88%;
+  /*background: linear-gradient(to right, #4C1D95 30%, #8B5CF6);*/
+  background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
+  line-height: 1.5;
+  font-family: "Nunito", sans-serif;
+}
+
+@media (min-width: 600px) {
+  .banner_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-us {
+    padding: 3vw 0 3vh 3vw;
+  }
+
+  .image-wrapper {
+    filter: hue-rotate(20deg);
+    clip-path: polygon(0 100%, 50% 0, 100% 0, 100% 100%);
+  }
+}
+.banner_about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .banner_about {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .banner_about h2 {
+        font-size: 30px !important;
+        padding-right: 10px !important;
+    }
+}
+
+.banner_about h2 {
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 40px;
+  /*font-size: clamp(2rem, 5vw, 2rem);*/
+  margin-block-end: 0.5rem;
+  color: #FFFFFF;
+}
+.banner_about p {
+  font-size: clamp(1rem, 1.5vw, 3rem);
+}
+
+.banner_image_div {
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0, 0, 0, 0);
+}
+.banner_image_div img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: right center;
+}

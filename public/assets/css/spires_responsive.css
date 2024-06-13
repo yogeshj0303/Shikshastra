@@ -1,0 +1,180 @@
+@media only screen and (max-width: 600px) {
+#yourBtn
+    {
+         border-radius: 7px;   
+    }
+.v2
+{
+    display :none;
+}
+.card_fres {
+    margin-top: -44px;
+    /* margin-left: 88px; */
+}
+#yourBtn {
+    margin-top: -51px !important;
+    margin-bottom: 20px !important;
+    margin-left: 112% !important;
+}
+.category1
+{
+  margin-top: 40% !important;   
+}
+.category {
+    margin-top: 0%;
+}
+.featured
+{
+    font-size:20px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+.featured1
+{
+    font-size:18px;
+}
+.featured2
+{
+    font-size:25px;
+}
+.featured3
+{
+font-size: 19px;
+text-align:center;
+}
+.featured4
+{
+  font-size: 18px;  
+}
+.sponsors-section .inner-box {
+    padding: 11px;
+}
+.company11
+{
+    text-align:center;
+    margin-top: -22%;
+}
+.vl
+{
+    display:none;
+}
+form.example button
+{
+        border-top-right-radius: 0px;
+}
+.search-card img {
+  margin-top: -60px;
+}
+/*form {*/
+/*    padding: 10px 1em;*/
+/*}*/
+.btn-menu {
+    background: #f38e27;
+    color: white;
+    width: 140px;
+    margin-left: 8px;
+}
+
+    .support_footer {
+    text-align: left;
+    margin-top: -218px;
+    margin-left: 54%;
+}
+.service_footer1
+{
+   text-align: left;
+    /*margin-top: -195px;*/
+    /*margin-left: 54%; */
+}
+.footer-bottom {
+    padding-top: 0px; 
+}
+.single-footer-widget {
+    margin-bottom: 7px;
+}
+.sidebar .owl-carousel .owl-item img {
+    width:100% !important;
+}
+.single-slidebar1
+{
+    width:100%;
+}
+/*.section-gap*/
+/*{*/
+/*display:none;    */
+/*}*/
+}
+/*@media screen and (max-width: 9000px) and (min-width: 600px) {*/
+@media (max-width: 767px) {
+/* .banner_spires    
+{
+    margin-top:120px;
+} */
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+}  
+.hempo {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 36px;
+  color: #fff;
+  text-align: center;
+}
+.mobile_seeen
+{
+    display:none;
+}
+.search-card img {
+  margin-top: -80px;
+  width: 200px;
+}
+
+.tab {
+  float: left;
+  margin-top:25px;
+}
+.category
+{
+    margin-top:10px;
+}
+.category ul
+{
+    padding-top:25px !important;
+}
+.category li
+{
+ width:30%;   
+ margin-bottom:0px;
+}
+.category li img
+{
+    width:50px;
+}
+.mt-100
+{
+    margin-top:200px !important;
+}
+/* form.example 
+{
+    margin-top: 10px;
+    margin-left: -2px;
+} */
+.single-fcat h5
+{
+  margin-top: 0px;
+  font-size:14px;
+}
+
+.single-fcat p {
+  padding-top: 7px;
+  margin-top: 0px;
+  margin-bottom: 0;
+  color: #222;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight:500;
+  
+}
+
+}
