@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Seo;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class SeoController extends Controller
@@ -14,7 +15,8 @@ class SeoController extends Controller
     public function index()
     {
         //
-        $seo = Seo::all();
+        $seo = DB::table("seos")->first();  
+        
         return view("admin.seo.index", compact("seo"));
     }
 

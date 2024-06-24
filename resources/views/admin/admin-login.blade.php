@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Spires
+	<title>Shikshastra | Admin Login
         
     </title>
 	<!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->

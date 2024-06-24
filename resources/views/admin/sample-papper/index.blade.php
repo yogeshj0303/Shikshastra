@@ -13,6 +13,11 @@
         cursor: pointer;
         border-radius: 4px;
     }
+  .description-container {
+        width: 400px;
+        height:100px;
+        overflow: scroll;
+    }
 </style>
 <div class="pcoded-main-container">
    
@@ -32,6 +37,12 @@
                 </div>
             </div>
         </div>
+        @if(session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+
         <div class="row">
            
 
@@ -39,9 +50,8 @@
                       <thead>
                         <tr>
                           <th scope="col">#</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Image</th>
-                          <th scope="col">Date</th>
+                          <th scope="col">Class Name</th>
+                          <th scope="col">Subject Name</th>
                           <th scope="col">Description</th>
                           <th scope="col">Action</th>
                       
@@ -52,18 +62,28 @@
                           @foreach($data as $key => $temp)
                         <tr>
                           <th>{{++$key}}</th>
-                          <td></td>
-                          <td><img src="" style="height: 50px; width:50px;"></td>
-                          <td></td>
-                           <td>{!!$temp->description!!}</td>
+                          <td>{{$temp->class_name}}</td>
+                          <td>{{$temp->subject_name}}</td>
+<td>
+    <div class="description-container">
+        {!! $temp->description !!}
+        </div>
+ 
+</td>
+
+
+
                           
-                                   <td>
-                                        
-                                         
-                                          
-                                           <a href="{{route('notes.destroy',$temp->id)}}" >   <i class="fa fa-trash"></i></a>
-                                       
-                                                </td>
+                                <td>
+                                      <a href="{{ route('sample-paper.edit', $temp->id) }}" class="btn btn-primary btn-sm">
+            <i class="fa fa-edit"></i>
+        </a>
+                                            <form action="{{ route('sample-paper.destroy', $temp->id) }}" method="POST" class="d-inline delete-form">
+                                                @csrf
+                                                @method('DELETE')
+                                                 <button type="submit" class="btn btn-danger btn-sm delete-btn" onclick="return confirm('Are you sure you want to delete this item?')"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                        </td>
                                      
                         
                         </tr>
@@ -76,4 +96,5 @@
         <!-- [ Main Content ] end -->
     </div>
 </div>
+
 @endsection

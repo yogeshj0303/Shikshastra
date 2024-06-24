@@ -54,36 +54,7 @@
                             @enderror
                             </span>
 </div>
-    <div class="form-group">
-    <label class="floating-label" for="company">Uploaded by</label>
-    <input type="text" class="form-control" name="company" value="{{ $admin->username }}"  id="company"  readonly>
-    <span class="text-danger" id="company">
-      @error('company')
-                              {{$message}}
-                         
-                            @enderror
-                            </span>
-</div>
-<div class="form-group">
-    <label class="floating-label" for="category">Category</label>
-    <select class="form-control" name="category_id" id="category">
-        <?php
-        $data1=DB::table('blogcategories')->get();
-        ?>
-        @foreach($data1 as $cat)
-        <option value="{{$cat->id}}">{{$cat->name}}</option>
-        @endforeach
-        <!--<option value="category2">Category 2</option>-->
-        <!--<option value="category3">Category 3</option>-->
-        <!-- Add more options as needed -->
-    </select>
-</div>
- <div class="form-group">
-    <label class="floating-label" for="note">Note </label>
-    <input type="text" class="form-control" name="note" value=""  id="note" >
-    
-</div>
-                                
+                      
    <div class="col-6 form-floating mb-3">
     <div class="form-group">
         <label class="floating-label" for="image">Image</label>

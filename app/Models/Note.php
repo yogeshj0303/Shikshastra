@@ -15,4 +15,8 @@ class Note extends Model
         'youtube_link',
         'description',
     ];
+    public function details()
+{
+    return $this->hasMany(NoteDetail::class);
+}
 }

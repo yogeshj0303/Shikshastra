@@ -19,6 +19,14 @@
                 </div>
             </div>
         </div>
+
+<?php
+$classCount = DB::table("categories")->count();
+$enquiryCount = DB::table("enquiries")->count();
+$subjectCount = DB::table("subjects")->count(); 
+$totalBlogsCount = DB::table("blogs")->count();
+?>
+
         <!-- [ breadcrumb ] end -->
         <!-- [ Main Content ] start -->
         <div class="row">
@@ -35,8 +43,8 @@
                                 </div>
                                
                                 <div class="col-sm-8 text-md-center">
-                                    <h5></h5>
-                                    <span><b>Employer User</b></span>
+                                    <h5>{{$classCount}}</h5>
+                                    <span><b>Total Class</b></span>
                                 </div>
                             </div>
                             </a>
@@ -51,8 +59,8 @@
                                 </div>
                               
                                 <div class="col-sm-8 text-md-center">
-                                    <h5></h5>
-                                    <span><b>Registered User</b></span>
+                                    <h5>{{$enquiryCount}}</h5>
+                                    <span><b>Total Enquiry</b></span>
                                 </div>
                                 
                                 
@@ -75,8 +83,8 @@
                                 </div>
                             
                                 <div class="col-sm-8 text-md-center">
-                                    <h5>10 </h5>
-                                    <span><b>Jobs</b></span>
+                                    <h5>{{$subjectCount}} </h5>
+                                    <span><b>Total Subjects</b></span>
                                 </div>
                             
                                
@@ -93,8 +101,8 @@
                                 </div>
                            
                                 <div class="col-sm-8 text-md-center">
-                                   <h5>10</h5>
-                                   <span><b>Internships</b></span>
+                                   <h5>{{$totalBlogsCount}}</h5>
+                                   <span><b>Total Blogs</b></span>
                                 </div>
                                 
                                 
@@ -111,121 +119,7 @@
                
                 <!-- widget primary card end -->
             </div>
-              <div class="row">
-                <div class="card flat-card">
-                    <div class="row-table">
-                      
-                        <div class="col-sm-6 card-body br">
-                             <a href="" >
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    
-                                    <i class="fa fa-sitemap text-c-green mb-1 d-block"></i>
-                                </div>
-                              
-                                <div class="col-sm-8 text-md-center">
-                                    <h5>5</h5>
-                                    <span><b>Job Category</b></span>
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-                            <div class="col-sm-6 card-body">
-                              <a href="" >
-                            <div class="row">
-                                <div class="col-sm-4">
-                                     <i class="fa fa-paper-plane text-c-yellow mb-1 d-block"></i>
-                                    <!--<i class="fa fa-paw text-c-red mb-1 d-block"></i>-->
-                                </div>
-                               
-                                
-                                <div class="col-sm-8 text-md-center">
-                                    <h5>25</h5>
-                                    <span><b>Blogs</b></span>
-                                </div>
-                               
-                            </div>
-                            </a>
-                        </div>
-                        
-                    </div>
-                    <div class="row-table">
-                    
-                        <div class="col-sm-6 card-body br">
-                             <a href="" >
-                            <div class="row">
-                                <div class="col-sm-4">
-                                     <i class="fa fa-users text-c-blue mb-1 d-block"></i>
-                                     <!--<i class="fa fa-briefcase text-c-blue mb-1 d-block"></i>-->
-                                    
-                                </div>
-                               
-                               
-                                <div class="col-sm-8 text-md-center">
-                                    <h5>85</h5>
-                                    <span><b>Employees</b></span>
-                                </div>
-                               
-                            </div>
-                            </a>
-                        </div>
-                      
-                        <div class="col-sm-6 card-body">
-                              <a href="" >
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <i class="fas fa-signal text-c-yellow mb-1 d-block"></i>
-                                </div>
-                               
-                                <div class="col-sm-8 text-md-center">
-                                    <h5>55</h5>
-                                    <span><b>Locations</b></span>
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-                      
-                    </div>
-                </div>
-                <!-- widget primary card start -->
-              
-                <!-- widget primary card end -->
-            </div>
-            <!-- table card-1 end -->
-           
-            <!-- Widget primary-success card start -->
-            {{--  <div class="col-md-12 col-xl-4">
-                <div class="card support-bar overflow-hidden">
-                    <div class="card-body pb-0">
-                        <h2 class="m-0">350</h2>
-                        <span class="text-c-blue">Support Requests</span>
-                        <p class="mb-3 mt-3">Total number of support requests that come in.</p>
-                    </div>
-                    <div id="support-chart"></div>
-                    <div class="card-footer bg-primary text-white">
-                        <div class="row text-center">
-                            <div class="col">
-                                <h4 class="m-0 text-white">10</h4>
-                                <span>Open</span>
-                            </div>
-                            <div class="col">
-                                <h4 class="m-0 text-white">5</h4>
-                                <span>Running</span>
-                            </div>
-                            <div class="col">
-                                <h4 class="m-0 text-white">3</h4>
-                                <span>Solved</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  --}}
-            <!-- Widget primary-success card end -->
-
-
-
-            <!-- seo end -->
-
+        
             <!-- Latest Customers start -->
 
             <!-- Latest Customers end -->

@@ -128,8 +128,8 @@
                                 </a>
                             </div>
                             <ul class="pro-body">
-                                <li><a href="user-profile.html" class="dropdown-item"><i
-                                            class="feather icon-user"></i> Profile</a></li>
+                                <!--<li><a href="user-profile.html" class="dropdown-item"><i-->
+                                <!--            class="feather icon-user"></i> Profile</a></li>-->
                                 <li><a href="change-password" class="dropdown-item"><i
                                             class="feather icon-mail"></i>Change Password</a></li>
                                 <li><a href="/logout" class="dropdown-item"><i

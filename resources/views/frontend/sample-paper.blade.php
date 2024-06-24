@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Shikshastra | Home</title>
+    <title>Shikshastra | Sample Papers</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Free HTML Templates" name="keywords" />
     <meta content="Free HTML Templates" name="description" />
@@ -26,51 +26,42 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 pb-1">
                 <hr>
-                <p class="h1">CBSE Sample Papers for Class 9</p>
+                <p class="h1">Sample Papers for {{$getClassName->name}}</p>
                 <hr>
-                <div class="d-flex bg-light shadow-sm border rounded mb-4">
-                    <table class="table px-lg-5">
-                        <thead>
+                @foreach ($subjects as $temp)
+    <div class="d-flex bg-light shadow-sm border rounded mb-4">
+        <table class="table px-lg-5">
+            <thead>
+                <tr>
+                    <th scope="col" class="h3">Sample Papers for {{$temp->class_name}} {{$temp->subject_name}} Session 2024 – 2025</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if ($temp->sample_papers->isEmpty())
+                    <tr>
+                        <td>  <p class="text-danger">Sample paper not available in this subject</p></td>
+                    </tr>
+                @else
+                    @foreach ($temp->sample_papers as $samplePaper)
+                        @foreach ($samplePaper->sample_details as $new)
                             <tr>
-                                <th scope="col" class="h3">Sample Papers for Class 9 Maths Session 2021 – 2022</th>
+                                <td>
+                                    <a href="{{ asset($new->image_path) }}" target="_blank">
+                                        <img src="{{asset('frontend/img/checked.png')}}" style="width: 15px; height: 15px;" alt="Tick">
+                                        {{$new->sample_paper_name}}
+                                    </a>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
+                        @endforeach
+                    @endforeach
+                @endif
+            </tbody>
+        </table>
+    </div>
+@endforeach
 
-                            <tr>
-                                <td><a href="chapterDetails.html"><img src="./img/checked.png"
-                                            style="width: 15px; height: 15px;" alt="Tick"> Class
-                                        9 Maths Practice Paper 1</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="chapterDetails.html"><img src="./img/checked.png"
-                                            style="width: 15px; height: 15px;" alt="Tick"> Class
-                                        9 Maths Practice Paper 1 OMR Sheet</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="chapterDetails.html"><img src="./img/checked.png"
-                                            style="width: 15px; height: 15px;" alt="Tick"> Class
-                                        9 Maths Practice Paper 1 Answers</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="chapterDetails.html"><img src="./img/checked.png"
-                                            style="width: 15px; height: 15px;" alt="Tick"> Class
-                                        9 Maths Practice Paper 2</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="chapterDetails.html"><img src="./img/checked.png"
-                                            style="width: 15px; height: 15px;" alt="Tick"> Class
-                                        9 Maths Practice Paper 2 OMR Sheet</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="chapterDetails.html"><img src="./img/checked.png"
-                                            style="width: 15px; height: 15px;" alt="Tick"> Class
-                                        9 Maths Practice Paper 2 Answers</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="d-flex bg-light shadow-sm border rounded mb-4">
+
+                <!-- <div class="d-flex bg-light shadow-sm border rounded mb-4">
                     <table class="table px-lg-5">
                         <thead>
                             <tr>
@@ -206,8 +197,8 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <hr>
+                </div> -->
+                <!-- <hr>
                 <p class="h1">Class 9 Science Sample Paper 1 Explanation</p>
                 <hr>
                 <div class="py-3">
@@ -216,34 +207,33 @@
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+                </div> -->
+               
                 <hr>
                 <p class="h3">
-                    CBSE Sample Papers for Class 9 All Subjects
-                </p>
-                <p>
-                    CBSE Sample Papers for Class 9 all subjects are given below. Previous years question papers with
-                    solutions are also
-                    given to download free in PDF format. Most of the papers are based on NCERT Books and interactive
-                    questions. If you have
-                    any doubt, please visit to discussion forum and ask your questions.
+                     Sample Papers for Class  {{$getClassName->name}} All Subjects
                 </p>
                 <hr>
-                <hr>
-                <p class="h3">
-                    CBSE Sample Papers for Class 9 All Subjects
-                </p>
-                <hr>
-                <div>
-                    <p class="h5">English</p>
-                    <ul>
-                        <li>Sample Paper 1</li>
-                        <li>Sample Paper 1 Solutions</li>
-                        <li>Sample Paper 2</li>
-                        <li>Sample Paper 2 Solutions</li>
-                        <li>Sample Paper 3</li>
-                    </ul>
-                </div>
+                @foreach ($subjects as $allSubject)
+    <div class="card mb-4">
+        <div class="card-body">
+            <p class="h5">{{$allSubject->subject_name}}</p>
+            @if ($allSubject->sample_papers->isEmpty())
+                <p class="text-danger">Sample paper not available in this subject</p>
+            @else
+                <ul class="list-group list-group-flush">
+                    @foreach ($allSubject->sample_papers as $samplePaper)
+                        @foreach ($samplePaper->sample_details as $temp)
+                        <a href="{{ asset($new->image_path) }}" target="_blank"><li class="list-group-item">{{$temp->sample_paper_name}}</li></a> 
+                        @endforeach
+                    @endforeach
+                </ul>
+            @endif
+        </div>
+    </div>
+@endforeach
+
+<!--                 
                 <div>
                     <p class="h5">Maths</p>
                     <ul>
@@ -263,24 +253,11 @@
                         <li>Sample Paper 2 Solutions</li>
                         <li>Sample Paper 3</li>
                     </ul>
-                </div>
+                </div> -->
             </div>
             <div class="col-lg-4 col-md-4 pb-1">
                 <div class="d-flex  shadow-sm border-top rounded mb-4 flex-column">
-                    <table class="table px-lg-5 table-borderless">
-                        <thead>
-                            <tr>
-                                <th scope="col"  class="h4">Buy NCERT Books Online</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <tr>
-                                <td><a href="#" class="text-ternary">Buy NCERT Books</a></td>
-                            </tr>
-
-                        </tbody>
-                    </table>
+                    
                     <table class="table px-lg-5 table-borderless">
                         <thead>
                             <tr>

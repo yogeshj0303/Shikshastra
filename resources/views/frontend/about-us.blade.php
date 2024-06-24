@@ -49,29 +49,7 @@ To address the many challenges our country faces, we need a powerful tool—educ
 Our continuous effort is to reach every child who wants to learn and grow. Together, we are the hope for children who want books in their hands and the trust for those who dream of shaping their future. We need your love, support, and partnership in this mission, and we know you are with us. We have the ability to make this happen, and that is why we are Shikshastra.
 
           </p>
-          <!-- <div class="row pt-2 pb-4">
-            <div class="col-6 col-md-4">
-              <img class="img-fluid rounded" src="img/about-2.jpg" alt="" />
-            </div>
-            <div class="col-6 col-md-8">
-              <ul class="list-inline m-0">
-                <li class="py-2 border-top border-bottom">
-                  <i class="fa fa-check text-primary mr-3"></i>Labore eos amet
-                  dolor amet diam
-                </li>
-                <li class="py-2 border-bottom">
-                  <i class="fa fa-check text-primary mr-3"></i>Etsea et sit
-                  dolor amet ipsum
-                </li>
-                <li class="py-2 border-bottom">
-                  <i class="fa fa-check text-primary mr-3"></i>Diam dolor diam
-                  elitripsum vero.
-                </li>
-              </ul>
-            </div>
           </div>
-          <a href="" class="btn btn-primary mt-2 py-2 px-4">Learn More</a> -->
-        </div>
       </div>
     </div>
   </div>
@@ -83,9 +61,9 @@ Our continuous effort is to reach every child who wants to learn and grow. Toget
     <div class="container">
       <div class="text-center pb-2">
         <p class="section-title px-5">
-          <span class="px-2">Our Teachers</span>
+           <span class="px-2">Visionaries Leading the Way</span> 
         </p>
-        <h1 class="mb-4">Meet Our Teachers</h1>
+         <h1 class="mb-4">About Our Founders</h1>  
       </div>
       <div class="row">
         <div
@@ -93,12 +71,12 @@ Our continuous effort is to reach every child who wants to learn and grow. Toget
           <div class="align-items-center justify-content-center d-flex flex-column">
             <div class="position-relative overflow-hidden mb-4"
               style="width: 200px; height: 200px; border-radius: 50%; object-fit: contain;">
-              <img class="img-fluid w-100" src="{{asset('frontend/co-founder.jpeg')}}" alt="" />
+              <img class="img-founder w-100" src="{{asset('frontend/co-founder.jpeg')}}" alt="" />
             </div>
             <h4>Imtiaz Shaikh</h4>
-            <i>Co founder</i>
+            <i>Founder</i>
           </div>
-          <i>I have always felt that education holds great importance in every field, whether big or small, especially
+          <i>&#x275D I have always felt that education holds great importance in every field, whether big or small, especially
             education that
             can be applied practically and isn't just theoretical. The foundation of education should always be laid in
             childhood.
@@ -113,19 +91,20 @@ Our continuous effort is to reach every child who wants to learn and grow. Toget
             is why I have made efforts to bring education to children through digital means, using educational tools.
             The goal is to
             inspire children towards education and provide them with the necessary resources so that they can build a
-            better future.</i>
+            better future. &#x275E</i>
         </div>
+        
         <div class="col-md-12 col-lg-12 text-center team mb-5  align-items-centerd justify-content-center">
           <div  class="align-items-center justify-content-center d-flex flex-column">
             <div class="position-relative overflow-hidden mb-4"
               style="width: 200px; height: 200px; border-radius: 50%; object-fit: contain;">
-              <img class="img-fluid w-100" src="{{asset('frontend/founder.jpeg')}}" alt="" />
+              <img class="img-founder w-100" src="{{asset('frontend/founder.jpeg')}}" alt="" />
             </div>
             <h4>Shehnaaz Shaikh</h4>
-            <i>Founder</i>
+            <i>Co Founder</i>
           </div>
 
-          <i>The joy of learning a new language, understanding new subjects, and tackling new questions is
+          <i>&#x275D The joy of learning a new language, understanding new subjects, and tackling new questions is
             indescribable. With the
             knowledge and understanding gained from education, we can eradicate all inequalities existing in the world.
             An educated
@@ -134,7 +113,7 @@ Our continuous effort is to reach every child who wants to learn and grow. Toget
             Education is a fundamental human right for everyone. Through our educational initiatives, we are making a
             small effort
             to open this path for more children, making life a little better and simpler for them.
-            .</i>
+            .&#x275E</i>
 
         </div>
       </div>

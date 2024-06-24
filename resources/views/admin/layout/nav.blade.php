@@ -34,7 +34,7 @@
 <div class="container" >
      <!-- footer content -->
          <footer class="main-footer text-center" >
-   <p style="color: black;"> <strong>Copyright &copy; 2023 <a href="https://acttconnect.com/" style="color: #f38e27;">ACT T Connect</a>.</strong>
+   <p style="color: black;"> <strong>Copyright &copy; 2024 <a href="#" style="color: #f38e27;">Shikshastra</a>.</strong>
     All rights reserved.
  </p>
   </footer>
@@ -105,12 +105,12 @@
                     <a href="{{url('enquiry')}}" class="nav-link "><span class="pcoded-micon"><i
                                 class="fas fa-folder"></i></span><span class="pcoded-mtext">Enquiry</span></a>
 
-                </li>
-                   <li class="nav-item">
-                    <a href="{{route('faq.index')}}" class="nav-link "><span class="pcoded-micon"><i
-                                class="fas fa-question-circle"></i></span><span class="pcoded-mtext">FAQ</span></a>
+                <!--</li>-->
+                <!--   <li class="nav-item">-->
+                <!--    <a href="{{route('faq.index')}}" class="nav-link "><span class="pcoded-micon"><i-->
+                <!--                class="fas fa-question-circle"></i></span><span class="pcoded-mtext">FAQ</span></a>-->
 
-                </li>
+                <!--</li>-->
                
                   <li class="nav-item">
                     <a href="{{route('seo.index')}}" class="nav-link "><span class="pcoded-micon"><i class="fas fa-money"></i>

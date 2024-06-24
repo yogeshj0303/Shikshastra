@@ -28,8 +28,7 @@ class BlogController extends Controller
     public function index()
     {
          if(Session::get('adminId')){
-        $data=DB::table('blogs')->leftjoin('blogcategories','blogcategories.id','=','blogs.category_id')
-        ->select('blogs.*','blogcategories.*','blogcategories.id as cat_id','blogs.id as id')->orderBy('blogs.id','DESC')->paginate(5);;
+        $data=DB::table('blogs')->orderBy('id','DESC')->paginate(5);;
       
         return view('admin.blog.index',compact('data'));
      }
@@ -65,10 +64,7 @@ class BlogController extends Controller
             $data = new Blog;
             $data->title = $request->title;
             $data->description = $request->description;
-            $data->company = $request->company;
-             $data->upload_user_id = $request->upload_user_id;
-            $data->note = $request->note;
-     $data->category_id = $request->category_id;
+          
             if ($request->hasfile('image')) {
 
 
@@ -102,9 +98,14 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+       
+        $urlTitle = str_replace('-', ' ', $request->id);
+
+        $value = DB::table('blogs')->where('title',$urlTitle)->first();
+         
+        return view('frontend.BlogDetails',compact('value'));
     }
 
     /**
@@ -139,10 +140,7 @@ class BlogController extends Controller
             $data=Blog::find($id);
             $data->title = $request->title;
             $data->description = $request->description;
-            $data->category_id = $request->category_id;
-            $data->company = $request->company;
-             $data->upload_user_id = $request->upload_user_id;
-            $data->note = $request->note;
+       
 
             if ($request->hasfile('image')) {
 

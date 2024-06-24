@@ -57,14 +57,16 @@ use Laravel\Socialite\Facades\Socialite;
 
 //--------------------Job Seekers Work By Priya and Piyush-------------------------//
 
-Route::get('/', function () {
+Route::get('/home-page', function () {
     return view('index');
 });
 Route::get('/gallery', function () {
     return view('frontend.gallery');
 });
 
-
+Route::get('/all-blogs', function () {
+    return view('frontend.allblogs');
+});
 
 // Route::get('/chapter-details', function () {
 //     return view('frontend.chapter-details');
@@ -93,6 +95,8 @@ Route::get('/contact-us', function () {
 Route::get('/about-us', function () {
     return view('frontend.about-us');
 });
+Route::get('/blog-details/{id}',  [BlogController::class, 'show'])->name('blog-details');
+
 Route::post('/enquiry', [EnquiryController::class, 'store'])->name('enquiry.store');
 Route::delete('/enquiry/{id}', [EnquiryController::class, 'destroy'])->name('enquiry.destroy');
 Route::get('logout', [AdminLoginController::class,'logout'])->name('admin.logout');
@@ -115,8 +119,16 @@ Route::resource('seo',SeoController::class);
 Route::resource('back-gallery',GalleryController::class);
 Route::resource('sample-paper',SamplePaperController::class);
 Route::resource('notes', NoteController::class);
+Route::delete('/notes/{id}', [NoteController::class, 'destroy'])->name('notes.destroy');
+Route::get('/notes/{id}/edit', [NoteController::class, 'edit'])->name('notes.edit');
+
 Route::get('/get-subjects/{class_id}', [NoteController::class, 'getSubjects'])->name('get-subjects');
 Route::get('/get-chapters/{subject_id}', [NoteController::class, 'getChapters'])->name('get-chapters');
+Route::get('/sample-paper-details/{sample_id}', [FrontendController::class, 'getSamplePaper'])->name('sample-paper-details');
+
+  Route::get('sample-paper/{id}/edit', [SamplePaperController::class, 'edit'])->name('sample-paper.edit');
+    Route::put('sample-paper/{id}', [SamplePaperController::class, 'update'])->name('sample-paper.update');
+
 
 Route::resource('location',LocationController::class);
 Route::resource('contact1',ContactController::class);

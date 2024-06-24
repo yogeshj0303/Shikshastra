@@ -69,25 +69,10 @@ $permission = DB::table('add_roles')->where('id', $user->role_id)->first();
                     <div class="card">
                         <div style="float: right;"> 
                         <div class="row">
-                             @if ($user->is_admin == 1 || $permission != null)
-        @if ($user->is_admin == 1 || $permission->blog_add == 2)
+                 
             <a href="{{ route('blog.create') }}" style="margin-left:14px;" class="btn btn-primary">Add Blog Here...</a>
-        @endif
-    @endif
-    <!--               <div class="dropdown" id="filterDropdown">-->
-    <!--<button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-    <!--    Filter By-->
-    <!--</button>-->
-    <!--<div class="dropdown-menu" aria-labelledby="filterDropdownButton">-->
-    <!--    <input class="dropdown-item" style="border:1px solid orange;" type="text" name="search" id="searchInput" placeholder="Search">-->
-    <!--    <a class="dropdown-item" href="#" data-filter="all">All</a>-->
-    <!--    <a class="dropdown-item" href="#" data-filter="yearly">Yearly</a>-->
-    <!--    <a class="dropdown-item" href="#" data-filter="monthly">Monthly</a>-->
-        
-        <!-- Loop through distinct plan_category values and create filter options -->
-   
-    <!--</div>-->
-<!--</div>-->
+      
+
 
 
 
@@ -106,13 +91,6 @@ $permission = DB::table('add_roles')->where('id', $user->role_id)->first();
                                 {{ session()->get('Error') }}
                             </div>
                         @endif
-                        <!--<div class="card-header">-->
-                        <!--    <h5>Company Listing</h5>-->
-                           
-                        <!--</div>-->
-          
-                         @if($user->is_admin==1||$permission!=null)
-                            @if($user->is_admin==1||$permission->blog_show==2)
                         <div class="card-body table-border-style">
                             <div class="table-responsive">
                                <table class="table table-striped" id="dataTable">
@@ -120,18 +98,13 @@ $permission = DB::table('add_roles')->where('id', $user->role_id)->first();
                                         <tr >
                                             <th>S N.</th>
                                             <th>Blag Title</th>
-                                            <th>Company</th>
-                                                  <th>Blog Category</th>
-                                              <th>Note</th>
+                                          
                                              <th>Image</th>
                                             <th>Description</th>
                                            
                                         
-                                             @if($user->is_admin==1||$permission!=null)
-                            @if($user->is_admin==1||$permission->blog_edit==2||$permission->blog_delete==2)
-                                            <th>Action</th>
-                                            @endif
-                                            @endif
+                                                <th>Action</th>
+                                         
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -139,9 +112,6 @@ $permission = DB::table('add_roles')->where('id', $user->role_id)->first();
                                             <tr >
                                                 <th scope="row">{{$data->firstItem() + $key }}</th>
                                                 <td>{{ $value->title }}</td>
-                                                <td>{{ $value->company}}</td>
-                                                   <td>{{ $value->name}}</td>
-                                                  <th>{{ $value->note}}</th>
                                                   <td> <img src="{{ asset('uploads/blog/'.$value->image) }}" alt="Image" width="150" height="150"/>
 </td>
                                                              <td>{!! $value->description !!}</td>
@@ -152,20 +122,14 @@ $permission = DB::table('add_roles')->where('id', $user->role_id)->first();
 
                                                  
                                              
-                                                   @if($user->is_admin==1||$permission!=null)
-                            @if($user->is_admin==1||$permission->blog_edit==2||$permission->blog_delete==2) 
-                                               <td>
-                                                  
-                            @if($user->is_admin==1||$permission->blog_edit==2) 
+                                                      <td>
                                          <a href="{{route('blog.edit',$value->id)}}" > <i class="fa fa-edit"></i></a>
-                                         @endif
-                                          
-                            @if($user->is_admin==1||$permission->blog_delete==2) 
+                                  
+                                    
                                            <a href="{{route('blog-delete',$value->id)}}" >   <i class="fa fa-trash"></i></a>
-                                       @endif
+                                  
                                                 </td>
-                                                @endif
-                                                @endif
+                                             
                                             </tr>
                                         @endforeach
                                            
@@ -177,8 +141,7 @@ $permission = DB::table('add_roles')->where('id', $user->role_id)->first();
             </div>
                             </div>
                         </div>
-                        @endif
-                        @endif
+                      
                     </div>
                 </div>
 

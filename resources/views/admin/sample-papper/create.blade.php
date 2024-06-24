@@ -57,15 +57,7 @@
             @enderror
         </span>
     </div>
-    <div class="form-group">
-        <label class="floating-label" for="sample_paper_name">Sample Paper Name</label>
-        <input type="text" class="form-control" value="" name="sample_paper_name" required>
-        <span class="text-danger" id="sample_paper_name">
-            @error('sample_paper_name')
-                {{ $message }}
-            @enderror
-        </span>
-    </div>
+  
     <div class="form-group">
         <label class="floating-label" for="youtube_link">YouTube Link</label>
         <input type="text" class="form-control" value="" name="youtube_link" required>
@@ -78,6 +70,9 @@
     <table id="test-table" class="table table-condensed">
         <tbody id="test-body">
             <tr id="row0">
+            <td>
+                    <input name="sample_paper_name[]" placeholder="Sample Paper Name" type="text" class="form-control" />
+                </td>
                 <td>
                     <input name="image[]" type="file" class="form-control" />
                 </td>
@@ -113,7 +108,7 @@
 <script>
     var row = 1;
     $(document).on("click", "#add-row", function () {
-        var new_row = '<tr id="row' + row + '"><td><input name="image[]" type="file" class="form-control" /></td><td><input class="delete-row btn btn-primary" type="button" value="Delete" /></td></tr>';
+        var new_row = '<tr id="row' + row + '"><td><input name="sample_paper_name[]" placeholder="Sample Paper Name" type="text" class="form-control" /></td><td><input name="image[]" type="file" class="form-control" /></td><td><input class="delete-row btn btn-primary" type="button" value="Delete" /></td></tr>';
         $('#test-body').append(new_row);
         row++;
         return false;
