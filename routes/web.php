@@ -119,15 +119,15 @@ Route::resource('seo',SeoController::class);
 Route::resource('back-gallery',GalleryController::class);
 Route::resource('sample-paper',SamplePaperController::class);
 Route::resource('notes', NoteController::class);
-Route::delete('/notes/{id}', [NoteController::class, 'destroy'])->name('notes.destroy');
-Route::get('/notes/{id}/edit', [NoteController::class, 'edit'])->name('notes.edit');
+// Route::delete('/notes', [NoteController::class, 'destroy'])->name('notes.destroy');
+// Route::get('/notes/{id}/edit', [NoteController::class, 'edit'])->name('notes.edit');
 
 Route::get('/get-subjects/{class_id}', [NoteController::class, 'getSubjects'])->name('get-subjects');
 Route::get('/get-chapters/{subject_id}', [NoteController::class, 'getChapters'])->name('get-chapters');
 Route::get('/sample-paper-details/{sample_id}', [FrontendController::class, 'getSamplePaper'])->name('sample-paper-details');
 
-  Route::get('sample-paper/{id}/edit', [SamplePaperController::class, 'edit'])->name('sample-paper.edit');
-    Route::put('sample-paper/{id}', [SamplePaperController::class, 'update'])->name('sample-paper.update');
+//   Route::get('sample-paper/{id}/edit', [SamplePaperController::class, 'edit'])->name('sample-paper.edit');
+//     Route::put('sample-paper/{id}', [SamplePaperController::class, 'update'])->name('sample-paper.update');
 
 
 Route::resource('location',LocationController::class);

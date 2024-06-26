@@ -24,37 +24,19 @@
   <link rel="icon" href="{{ asset('backend/assets/images/favicon.jpg') }}" />
 
   <style>
-    .nav-item .dropdown-submenu {
+
+/* screenshot and copy text restric */
+
+    .nav-item {
       position: relative;
     }
 
-    .nav-item .dropdown-submenu .dropdown-menu {
-      display: none;
-      position: absolute;
-      left: 100%;
-      top: 0;
-      margin-top: 0;
-    }
-
-    .nav-item .dropdown-submenu:hover .dropdown-menu {
-      display: block;
-    }
-
-    /* Option 1: Using borders */
-    .nav-item {
-      border-bottom: 1px solid #ddd;
-      /* Adjust border style and color as needed */
-    }
-
-    /* Option 2: Using pseudo-elements (Advanced) */
     .nav-item::after {
       content: "";
       display: block;
       width: 100%;
       height: 1px;
-      /* Adjust separator thickness */
       background-color: #ddd;
-      /* Adjust separator color */
       position: absolute;
       bottom: 0;
       left: 0;
@@ -62,7 +44,14 @@
 
     .nav-item:last-child::after {
       display: none;
-      /* Hide separator on the last item */
+    }
+
+    .nav-item .dropdown-menu {
+      display: none;
+    }
+
+    .nav-item:hover > .dropdown-menu {
+      display: block;
     }
   </style>
 </head>
@@ -95,7 +84,14 @@
             ->join('categories', 'categories.id', '=', 'subjects.class_id')
             ->get()
             ->groupBy('category_id');
-          
+          // Fetch languages for each subject and attach them
+          foreach ($subjectsByClass as $category_id => $subjects) {
+            foreach ($subjects as $subject) {
+              $languages = DB::table('languages')->where('subject_id', $subject->id)->get();
+              $subject->lang_name = $languages;
+            }
+          }
+
           $subjectsBySample = DB::table('categories')
             ->orderBy('id', 'desc') // Order the records by id in descending order
             ->take(4) // Take the first 4 records in descending order
@@ -113,15 +109,24 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Class Solutions</a> 
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Class Solutions</a>
             <ul class="dropdown-menu rounded-0 m-0">
               @foreach ($classes as $class)
               <li class="nav-item dropdown-submenu">
-                <a href="{{url('get-subject/'.$class->id)}}" class="dropdown-item">{{ $class->name }}</a>
+                <a href="{{ url('get-subject/' . $class->id) }}" class="dropdown-item">{{ $class->name }}</a>
                 @if (isset($subjectsByClass[$class->id]) && !empty($subjectsByClass[$class->id]))
                 <ul class="dropdown-menu rounded-0 m-0">
                   @foreach ($subjectsByClass[$class->id] as $subject)
-                  <li><a href="{{ route('view-subject', $subject->id) }}" class="dropdown-item">{{ $subject->subject_name }}</a></li>
+                  <li class="nav-item dropdown-submenu">
+                    <a href="{{ route('view-subject', $subject->id) }}" class="dropdown-item">{{ $subject->subject_name }}</a>
+                    <!-- @if (isset($subject->lang_name) && $subject->lang_name->isNotEmpty())
+                    <ul class="dropdown-menu rounded-0 m-0">
+                      @foreach ($subject->lang_name as $language)
+                      <li><a href="{{ url('view-language', ['subject_id' => $subject->id, 'language' => $language->name]) }}" class="dropdown-item">{{ $language->name }}</a></li>
+                      @endforeach
+                    </ul>
+                    @endif -->
+                  </li>
                   @endforeach
                 </ul>
                 @endif
@@ -140,6 +145,53 @@
     </nav>
   </div>
   <!-- Navbar End -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownSubmenus = document.querySelectorAll('.nav-item.dropdown-submenu');
+
+      dropdownSubmenus.forEach(submenu => {
+        submenu.addEventListener('mouseover', function() {
+          const dropdownMenu = this.querySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.style.display = 'block';
+          }
+        });
+
+        submenu.addEventListener('mouseout', function() {
+          const dropdownMenu = this.querySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.style.display = 'none';
+          }
+        });
+
+        submenu.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const dropdownMenu = this.querySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+          }
+        });
+      });
+
+      const navbarItems = document.querySelectorAll('.navbar-nav .nav-item');
+      navbarItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          const dropdownMenu = this.querySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.style.display = 'block';
+          }
+        });
+
+        item.addEventListener('mouseout', function() {
+          const dropdownMenu = this.querySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
