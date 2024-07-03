@@ -18,10 +18,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
 
-                            <!--<div class="page-header-title">-->
-                            <!--    <h5 class="m-b-10">Review</h5>-->
-                            <!--</div>-->
-                         
+                           
                         </div>
                     </div>
                 </div>
@@ -37,62 +34,29 @@
                         </div>
                       
                         <div class="card-body">
-                            <form action="{{ route('seo.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('seo.getSeoDetail') }}" method="get" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group">
-    <label class="floating-label" for="page_name">Page Name</label>
-    <select name="page_name" id="page_name" class="form-control">
-        <option value="">--Select Page--</option>
-        <option value="home" {{ $seo->page_name == 'home' ? 'selected' : '' }}>Home</option>
-        <option value="about-us" {{ $seo->page_name == 'about-us' ? 'selected' : '' }}>About Us</option>
-        <option value="subject" {{ $seo->page_name == 'subject' ? 'selected' : '' }}>Subjects</option>
-        <option value="chapter" {{ $seo->page_name == 'chapter' ? 'selected' : '' }}>Chapter</option>
-        <option value="chapter-details" {{ $seo->page_name == 'chapter-details' ? 'selected' : '' }}>Chapter Details</option>
-        <option value="contact-us" {{ $seo->page_name == 'contact-us' ? 'selected' : '' }}>Contact Us</option>
-        <option value="blogs" {{ $seo->page_name == 'blogs' ? 'selected' : '' }}>Blogs</option>
-        <option value="gallery" {{ $seo->page_name == 'gallery' ? 'selected' : '' }}>Gallery</option>
-    </select>
-    <span class="text-danger">
-        @error('page_name')
-            {{$message}}
-        @enderror
-    </span>
-</div>
-
-                     <div class="form-group">
-                        <label class="floating-label" for="Email">Meta Title</label>
-                        <input type="text" class="form-control" name="meta_title" value="{{ $seo->meta_title }}"   required>
-                        <span class="text-danger" id="nameError">
-                        @error('meta_title')
-                              {{$message}}
-                         
-                            @enderror
-                            </span>
-                        </div>
-                        
-                        <div class="form-group">
-                        <label class="floating-label" for="Email">Meta Keywords</label>
-                        <input type="text" class="form-control" name="meta_keyword" value="{{ $seo->meta_keyword }}"   required>
-                      
-                        @error('meta_keyword')
+                        <label class="floating-label" for="Email">Select Page</label>
+                        <select name="page_name" id="" class="form-control">
+                            <option value="">--Select Page--</option>
+                            <option value="home">Home</option>
+                            <option value="about-us">About Us</option>
+                            <option value="subject">Subjects</option>
+                            <option value="chapter">Chapter</option>
+                            <option value="chapter-details">Chapter Details</option>
+                            <option value="contact-us">Contact Us</option>
+                            <option value="blogs">Blogs</option>
+                            <option value="gallery">Gallery</option>
+                        </select>
+                        @error('page_name')
                               {{$message}}
                          
                             @enderror
                             </span>
                         </div>
 
-                        <div class="form-group">
-                        <label class="floating-label" for="Email">Meta Description</label>
-                        <input type="text" class="form-control" name="meta_desc" value="{{ $seo->meta_desc }}"   required>
-                     
-                        @error('meta_desc')
-                              {{$message}}
-                         
-                            @enderror
-                            </span>
-                        </div>
-                           
                                 <button type="submit" class="btn  btn-primary">Submit</button>
 
                             </form>

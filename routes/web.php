@@ -116,6 +116,7 @@ Route::resource('faqcategory',FaqCategoryController::class);
 Route::resource('subject',SubjectController::class);
 Route::resource('chapter',ChapterController::class);
 Route::resource('seo',SeoController::class);
+Route::get('/get-subjects', [SeoController::class, 'getSeo'])->name('seo.getSeoDetail');
 Route::resource('back-gallery',GalleryController::class);
 Route::resource('sample-paper',SamplePaperController::class);
 Route::resource('notes', NoteController::class);

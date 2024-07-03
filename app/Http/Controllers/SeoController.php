@@ -17,6 +17,12 @@ class SeoController extends Controller
         //
         $seo = DB::table("seos")->first();  
         
+        return view("admin.seo.view-index", compact("seo"));
+    }
+
+    public function getSeo(Request $request){
+        $seo = DB::table("seos")->where('page_name',$request->page_name)->first();  
+       
         return view("admin.seo.index", compact("seo"));
     }
 
