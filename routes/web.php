@@ -57,7 +57,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 //--------------------Job Seekers Work By Priya and Piyush-------------------------//
 
-Route::get('/home-page', function () {
+Route::get('/', function () {
     return view('index');
 });
 Route::get('/gallery', function () {
